@@ -2,9 +2,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const parent=React.createElement("div",{},[React.createElement("h1",{},"Im h1 tag"),React.createElement("h2",{},"Im h2t ag")]);
- const root=ReactDOM.createRoot(document.getElementById("root"));
 
- console.log(parent);
- 
-root.render(parent);
+const Heading=()=> {
+    return ( <h1 className='head'>
+    First REact project
+    </h1>
+);
+}
+
+const Child=()=>{return <h3>I m from the child</h3>}
+
+const Parent=()=>{
+  return  <div>
+    <Child/>
+     <h1 id="container">I am from the parent </h1>
+    </div>
+}
+
+ //console.log(parent);
+const root=ReactDOM.createRoot(document.getElementById("root")); 
+root.render(<Parent/>);
